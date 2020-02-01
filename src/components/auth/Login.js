@@ -22,7 +22,8 @@ class Login extends Component {
 
     submitHandler = e => {
         e.preventDefault();
-        this.props.login(this.state.userCreds).then(() => {
+        // logIn needs to match action syntax, which is being passed in as a prop
+        this.props.logIn(this.state.userCreds).then(() => {
             if (localStorage.getItem('token')) {
                 this.props.history.push("/");
                 // Push argument might need to change?
@@ -65,5 +66,6 @@ class Login extends Component {
 
 export default connect(
     null, 
-    { login }
+    { logIn }
+    // Note: line above references the action in store.
 )(Login)
