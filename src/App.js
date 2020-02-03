@@ -1,11 +1,13 @@
 import React from "react";
 import Global from "./styles/global";
 
+import Main from './views/Main'
+
 function App() {
   return (
     <div>
       <Global />
-      <p>Hello</p>
+      <Main />
     </div>
   );
 }
