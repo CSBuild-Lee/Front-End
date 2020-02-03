@@ -1,11 +1,13 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React from "react";
+import Global from "./styles/global";
 
 function App() {
-    return (
-        // Route paths and components go here
-        <div>Stuff</div>
-    )
+  return (
+    <div>
+      <Global />
+      <p>Hello</p>
+    </div>
+  );
 }
 
 export default App;
