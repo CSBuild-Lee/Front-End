@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import axios from 'axios';
 
 function Signup() {
@@ -6,7 +7,7 @@ function Signup() {
     const [creds, setCreds] = useState({ username: '', password: '' });
 
     const handleChange = e => {
-        setCreds({ ...creds, [e.target.name]: [e.target.value] })
+        setCreds({ ...creds, [e.target.name]: e.target.value })
     }
 
     const handleSubmit = e => {
