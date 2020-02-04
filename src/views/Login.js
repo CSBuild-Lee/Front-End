@@ -1,65 +1,54 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 
-class Login extends Component {
-    state = {
-        userCreds: {
-            username: "",
-            password: ""
-        }
-    };
+function Login() {
 
-    changeHandler = e => {
-        e.preventDefault();
-        this.setState({
-            userCreds: {
-                ...this.state.userCreds,
-                [e.target.name] : e.target.value
-            }
-        });
-    };
+    const [creds, setCreds] = useState({ username: '', password: '' });
 
-    submitHandler = e => {
-        e.preventDefault();
-        // logIn needs to match action syntax, which is being passed in as a prop
-        this.props.logIn(this.state.userCreds).then(() => {
-            if (localStorage.getItem('token')) {
-                this.props.history.push("/");
-                // Push argument might need to change?
-            }
-        });
-    };
-
-    render() {
-        return (
-            <>
-                {/* Do we need to pass error through props here? */}
-                <div className="login-container">
-                    <form className="login" onSubmit={this.submitHandler}>
-                        <div className="inputs-container">
-                            <label>Username</label>
-                            <input 
-                                id="username"
-                                type="text"
-                                name="username"
-                                value={this.state.userCreds.username}
-                                placeholder="Enter your username."
-                                onChange={this.changeHandler}
-                            />
-                            <input 
-                                id="password"
-                                type="password"
-                                name="password"
-                                value={this.state.userCreds.password}
-                                placeholder="Enter your password."
-                                onChange={this.changeHandler}
-                            />
-                            <button type="submit">Login to Play</button>
-                        </div>
-                    </form>
-                </div>
-            </>
-        )
+    const handleChange = e => {
+        setCreds({ ...creds, [e.target.name]: [e.target.value] })
     }
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        axios.post('/auth/login', creds)
+        .then(res => {
+            localStorage.setItem('token', res.data.token);
+            this.props.history.push('/');
+        })
+        .catch(err => console.error(err));
+    }
+
+    return (
+        <>
+            {/* Do we need to pass error through props here? */}
+            <div className="login-container">
+                <form className="login" onSubmit={handleSubmit}>
+                    <div className="inputs-container">
+                        <label>Username</label>
+                        <input 
+                            id="username"
+                            type="text"
+                            name="username"
+                            value={creds.username}
+                            placeholder="Enter your username."
+                            onChange={handleChange}
+                        />
+                        <label>Password</label>
+                        <input 
+                            id="password"
+                            type="password"
+                            name="password"
+                            value={creds.password}
+                            placeholder="Enter your password."
+                            onChange={handleChange}
+                        />
+                        <button type="submit">Login to Play</button>
+                    </div>
+                </form>
+            </div>
+        </>
+    )
 }
 
 export default Login;
