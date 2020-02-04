@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Signup extends Component {
     state = {
-        usercreds: {
+        userCreds: {
             username: "",
             password: ""
         }
