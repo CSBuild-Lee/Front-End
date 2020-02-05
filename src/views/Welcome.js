@@ -106,11 +106,22 @@ function Welcome() {
         return randomize(names);
     }
 
+    function readInstructions() {
+        let answer = window.confirm("Would you like to read the instructions first?")
+        if (answer) {
+        // Redirect to Instructions component
+        }
+        else {
+        // Redirect to game
+        }
+    }
+
     const handleRandomSubmit = e => {
         e.preventDefault();
-        setRandomName(getName())
+        setRandomName(getName());
         // First alert is always blank no matter how I write this syntax, hope that's not an issue with state...
         // alert(`Your bug's name is ${randomName}`)
+        readInstructions();
         console.log('Random name: ', randomName)
         // Do we need to send them to instructions/game from here?
     }
