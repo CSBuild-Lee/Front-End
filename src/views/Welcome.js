@@ -109,7 +109,7 @@ function Welcome() {
     }
 
     function readInstructions(randomName) {
-        let answer = window.confirm(`Your bug shall be named ${randomName}!\nWould you like to read the instructions first?`)
+        let answer = window.confirm(`Your bug shall be named ${randomName}!\nWould you like to read the instructions first (cancel means "No")?`)
         if (answer) {
             window.location.href = '/instructions'
         }
