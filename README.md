@@ -1,6 +1,6 @@
-## Angry Birds
+## Angry Bugs
 
-Angry Birds is an MUD game that was created during the Computer Science portion of Lambda School. 
+Angry Bugs is an MUD game that was created during the Computer Science portion of Lambda School. 
 
 ### How It Works
 
