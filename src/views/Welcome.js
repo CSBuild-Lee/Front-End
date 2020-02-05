@@ -77,16 +77,17 @@ function Welcome() {
         height: 5vh;
     `
 
-    let [name, setName] = useState('');
+    let [customName, setCustomName] = useState('');
+    let [randomName, setRandomName] = useState('Amadeus Arachnid')
 
     const handleChange = e => {
-        setName(...name, [e.target.name] = e.target.value)
+        setCustomName(...customName, [e.target.name] = e.target.value);
     }
 
     const handleSubmit = e => {
         e.preventDefault();
         // I've been debugging this for an hour and can only get it to show the first character. Will try again later.
-        alert(`Your bug's name is ${name}`)
+        alert(`Your bug's name is ${customName}`)
         // Should this also redirect to instructions?
     }
 
@@ -104,9 +105,10 @@ function Welcome() {
 
     const handleRandomSubmit = e => {
         e.preventDefault();
-        setName(getName())
+        setRandomName(getName())
         // First alert is always blank no matter how I write this syntax, hope that's not an issue with state...
-        alert(`Your bug's name is ${name}`)
+        // alert(`Your bug's name is ${randomName}`)
+        console.log('Random name: ', randomName)
         // Do we need to send them to instructions/game from here?
     }
 
@@ -138,14 +140,20 @@ function Welcome() {
                     <NameHeader>OPTION 1:</NameHeader>
                     <NameText>Choose a custom name that has special meaning to you and press the enter key.</NameText>
                     <form type="submit" onSubmit={handleSubmit}>
-                    <NameInput name="name" placeholder="Enter your bug's name here." onChange={handleChange} {...name} ></NameInput>
+                    <NameInput 
+                    type="text"
+                    name="name"
+                    // value={bugName} 
+                    onChange={handleChange}
+                    placeholder="Enter your bug's name here." 
+                    />
                     </form>
                 </NameFlexContainer>
                 <NameFlexContainer>
                     <NameHeader>OPTION 2:</NameHeader>
                     <NameText>Click “randomize” and our algorithm will randomly assign you an amusing name.</NameText>
-                    <form type="submit" onSubmit={handleRandomSubmit}>
-                    <NameButton>Randomize</NameButton>
+                    <form onSubmit={handleRandomSubmit}>
+                    <NameButton type="submit">Randomize</NameButton>
                     </form>
                 </NameFlexContainer>
             </NameContainer>
