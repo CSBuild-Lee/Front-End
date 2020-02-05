@@ -108,8 +108,8 @@ function Welcome() {
         return randomize(names);
     }
 
-    function readInstructions() {
-        let answer = window.confirm("Would you like to read the instructions first?")
+    function readInstructions(randomName) {
+        let answer = window.confirm(`Your bug shall be named ${randomName}!\nWould you like to read the instructions first?`)
         if (answer) {
             window.location.href = '/instructions'
         }
@@ -121,11 +121,8 @@ function Welcome() {
     const handleRandomSubmit = e => {
         e.preventDefault();
         setRandomName(getName());
-        // First alert is always blank no matter how I write this syntax, hope that's not an issue with state...
-        // alert(`Your bug's name is ${randomName}`)
-        readInstructions();
+        readInstructions(randomName);
         console.log('Random name: ', randomName)
-        // Do we need to send them to instructions/game from here?
     }
 
     return (
