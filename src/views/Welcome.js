@@ -83,6 +83,8 @@ function Welcome() {
     let [randomName, setRandomName] = useState(getName());
 
     const handleChange = e => {
+        // Could not get this function and the one below to work with the custom name input (spent at least two hours on it)
+        // Just sticking with random only for now so we can have a working, non-broken solution
         console.log(e.target.value);
         setCustomName(...customName, [e.target.name] = e.target.value);
         console.log('Custom Name: ', customName);
@@ -91,9 +93,7 @@ function Welcome() {
     const handleSubmit = e => {
         e.preventDefault();
         // I've been debugging this for an hour and can only get it to show the first character. Will try again later.
-        // alert(`Your bug's name is ${customName}`)
         console.log('Custom Name: ', customName);
-        // Should this also redirect to instructions?
     }
 
     function randomize(arr) {
