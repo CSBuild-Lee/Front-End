@@ -40,7 +40,7 @@ function Instructions() {
 
     const WelcomeList = styled.div`
         display: grid;
-        grid-template-columns: auto auto auto;
+        grid-template-columns: auto auto auto auto auto;
     `
 
     const WelcomeListItem = styled.p`
@@ -51,12 +51,27 @@ function Instructions() {
     
     `
 
+    const PlayContainer = styled.div`
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    `
+
+    const PlaySubHeader = styled.h3`
+        text-align: center;
+    `
+
+    const PlayText = styled.p`
+        text-align: center;
+        margin-bottom: 0;
+    `
+
     const PlayButton = styled.button`
         background: #86ED00;
         color: white;
         display: block;
         margin: 20px auto;
-        width: 25vw;
+        width: 50%;
         border: 1px solid black;
         height: 5vh;
     `
@@ -89,14 +104,18 @@ function Instructions() {
                             <WelcomeListItem>Potato: 163</WelcomeListItem>
                             <WelcomeListItem>Yam: 177</WelcomeListItem>
                         </WelcomeList>
+            {/* Add Link to Game Here */}
                 </IntroFlexContainer>
                 <IntroFlexContainer>
                     <IntroImage src={bug} />
                 </IntroFlexContainer>
             </IntroContainer>
             <Divider></Divider>
-            <PlayButton>Got It? Click Here to Play Now!</PlayButton>
-            {/* Add Link to Game Here */}
+            <PlayContainer>
+                <PlaySubHeader>Understand the rules?</PlaySubHeader>
+                <PlayText>Of course you do (they're easy!).</PlayText>
+                <PlayButton>Click Here to Play Now</PlayButton>
+            </PlayContainer>
         </WelcomeContainer>
 
     )

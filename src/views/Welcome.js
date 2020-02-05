@@ -75,6 +75,7 @@ function Welcome() {
         margin: 0 auto;
         width: 100%;
         height: 5vh;
+        border: 1px solid black;
     `
 
     let [customName, setCustomName] = useState('');
