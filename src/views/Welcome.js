@@ -139,21 +139,21 @@ function Welcome() {
             </IntroContainer>
             <Divider></Divider>
             <NameContainer>
-                <NameFlexContainer>
+                {/* <NameFlexContainer>
                     <NameHeader>OPTION 1:</NameHeader>
                     <NameText>Choose a custom name that has special meaning to you and press the enter key.</NameText>
                     <form type="submit" onSubmit={handleSubmit}>
                     <NameInput 
                     type="text"
                     name="name"
-                    // value={bugName} 
+                    // value={customName}
                     onChange={handleChange}
                     placeholder="Enter your bug's name here." 
                     />
                     </form>
-                </NameFlexContainer>
+                </NameFlexContainer> */}
                 <NameFlexContainer>
-                    <NameHeader>OPTION 2:</NameHeader>
+                    <NameHeader>Ready to Play?</NameHeader>
                     <NameText>Click “randomize” and our algorithm will randomly assign you an amusing name.</NameText>
                     <form onSubmit={handleRandomSubmit}>
                     <NameButton type="submit">Randomize</NameButton>
