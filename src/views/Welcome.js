@@ -105,7 +105,9 @@ function Welcome() {
     const handleRandomSubmit = e => {
         e.preventDefault();
         setName(getName())
+        // First alert is always blank no matter how I write this syntax, hope that's not an issue with state...
         alert(`Your bug's name is ${name}`)
+        // Do we need to send them to instructions/game from here?
     }
 
     return (
