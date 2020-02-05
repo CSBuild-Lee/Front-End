@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import bug from '../img/bug.png';
 
@@ -114,7 +115,7 @@ function Instructions() {
             <PlayContainer>
                 <PlaySubHeader>Understand the rules?</PlaySubHeader>
                 <PlayText>Of course you do (they're easy!).</PlayText>
-                <PlayButton>Click Here to Play Now</PlayButton>
+                <Link to="/"><PlayButton>Click Here to Play Now</PlayButton></Link>
             </PlayContainer>
         </WelcomeContainer>
 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import bug from '../img/bug.png';
 
@@ -110,10 +111,10 @@ function Welcome() {
     function readInstructions() {
         let answer = window.confirm("Would you like to read the instructions first?")
         if (answer) {
-        // Redirect to Instructions component
+            window.location.href = '/instructions'
         }
         else {
-        // Redirect to game
+            window.location.href = '/';
         }
     }
 
