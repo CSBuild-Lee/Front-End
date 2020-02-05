@@ -17,12 +17,17 @@ https://link-to-game-here.com
 ### Tech Stack
 
 Front-End: React
+
 Back-End: Django
 
 ### Team
 
 [LC Carrier](https://github.com/lccarrier) (Full Stack Web Developer)
+
 [Scott Huston](https://github.com/Scott-Huston) (Data Science)
+
 [Adan Rodriguez](https://github.com/AdanRodriguez) (Full Stack Web Developer)
+
 [Lee Tann](https://github.com/LeeTann) (Team Lead)
+
 [Daniel Wallen](https://github.com/WebWallen) (Full Stack Web Developer)
