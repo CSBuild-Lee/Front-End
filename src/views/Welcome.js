@@ -87,6 +87,25 @@ function Welcome() {
         e.preventDefault();
         // I've been debugging this for an hour and can only get it to show the first character. Will try again later.
         alert(`Your bug's name is ${name}`)
+        // Should this also redirect to instructions?
+    }
+
+    function randomize(arr) {
+        // Calculate a random index based on array length
+        const idx = Math.floor(Math.random() * arr.length);
+        // Return the array value based on its [index]
+        return arr[idx];
+    }
+
+    function getName() {
+        let names = ["Marty McFly", "Catterthriller", "Amadeus Arachnid", "Alexander the Gnat", "Pestiroth", "Mothra", "Beetlejuice", "Papa Roach", "Buzz Kill", "The Terminiter"]
+        return randomize(names);
+    }
+
+    const handleRandomSubmit = e => {
+        e.preventDefault();
+        setName(getName())
+        alert(`Your bug's name is ${name}`)
     }
 
     return (
@@ -123,7 +142,9 @@ function Welcome() {
                 <NameFlexContainer>
                     <NameHeader>OPTION 2:</NameHeader>
                     <NameText>Click “randomize” and our algorithm will randomly assign you an amusing name.</NameText>
+                    <form type="submit" onSubmit={handleRandomSubmit}>
                     <NameButton>Randomize</NameButton>
+                    </form>
                 </NameFlexContainer>
             </NameContainer>
         </WelcomeContainer>
