@@ -78,16 +78,19 @@ function Welcome() {
     `
 
     let [customName, setCustomName] = useState('');
-    let [randomName, setRandomName] = useState('Amadeus Arachnid')
+    let [randomName, setRandomName] = useState(getName());
 
     const handleChange = e => {
+        console.log(e.target.value);
         setCustomName(...customName, [e.target.name] = e.target.value);
+        console.log('Custom Name: ', customName);
     }
 
     const handleSubmit = e => {
         e.preventDefault();
         // I've been debugging this for an hour and can only get it to show the first character. Will try again later.
-        alert(`Your bug's name is ${customName}`)
+        // alert(`Your bug's name is ${customName}`)
+        console.log('Custom Name: ', customName);
         // Should this also redirect to instructions?
     }
 
