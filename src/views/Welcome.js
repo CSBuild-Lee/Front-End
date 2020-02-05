@@ -77,7 +77,17 @@ function Welcome() {
         height: 5vh;
     `
 
-    const [name, setName] = useState('');
+    let [name, setName] = useState('');
+
+    const handleChange = e => {
+        setName(...name, [e.target.name] = e.target.value)
+    }
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        // I've been debugging this for an hour and can only get it to show the first character. Will try again later.
+        alert(`Your bug's name is ${name}`)
+    }
 
     return (
 
@@ -106,7 +116,9 @@ function Welcome() {
                 <NameFlexContainer>
                     <NameHeader>OPTION 1:</NameHeader>
                     <NameText>Choose a custom name that has special meaning to you and press the enter key.</NameText>
-                    <NameInput placeholder="Enter your bug's name here."></NameInput>
+                    <form type="submit" onSubmit={handleSubmit}>
+                    <NameInput name="name" placeholder="Enter your bug's name here." onChange={handleChange} {...name} ></NameInput>
+                    </form>
                 </NameFlexContainer>
                 <NameFlexContainer>
                     <NameHeader>OPTION 2:</NameHeader>
