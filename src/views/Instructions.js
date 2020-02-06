@@ -113,7 +113,7 @@ function Instructions() {
             </IntroContainer>
             <Divider></Divider>
             <PlayContainer>
-                <PlaySubHeader>Understand the rules?</PlaySubHeader>
+                <PlaySubHeader>Understand the Rules?</PlaySubHeader>
                 <PlayText>Of course you do (they're easy!).</PlayText>
                 <Link to="/"><PlayButton>Click Here to Play Now</PlayButton></Link>
             </PlayContainer>

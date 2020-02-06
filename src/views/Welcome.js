@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import bug from '../img/bug.png';
 
@@ -85,6 +84,7 @@ function Welcome() {
     const handleChange = e => {
         // Could not get this function and the one below to work with the custom name input (spent at least two hours on it)
         // Just sticking with random only for now so we can have a working, non-broken solution
+        // The issue = only assigning one character to the name no matter how I do the syntax
         console.log(e.target.value);
         setCustomName(...customName, [e.target.name] = e.target.value);
         console.log('Custom Name: ', customName);
@@ -92,7 +92,6 @@ function Welcome() {
 
     const handleSubmit = e => {
         e.preventDefault();
-        // I've been debugging this for an hour and can only get it to show the first character. Will try again later.
         console.log('Custom Name: ', customName);
     }
 
