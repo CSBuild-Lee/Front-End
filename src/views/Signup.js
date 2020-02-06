@@ -105,7 +105,7 @@ function Signup() {
                                 type="password"
                                 name="password1"
                                 value={creds.password}
-                                placeholder="Enter your password."
+                                placeholder="Choose a password (at least 8 characters)."
                                 onChange={handleChange}
                             />
                             <InputLabel>Confirm Password</InputLabel>
