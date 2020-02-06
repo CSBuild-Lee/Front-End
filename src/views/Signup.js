@@ -63,7 +63,7 @@ const FormDescription = styled.p`
 
 function Signup() {
     
-    const [creds, setCreds] = useState({ username: '', password: '' });
+    const [creds, setCreds] = useState({ username: '', password1: '', password2: '' });
 
     const handleChange = e => {
         setCreds({ ...creds, [e.target.name]: e.target.value })
@@ -71,10 +71,11 @@ function Signup() {
 
     const handleSubmit = e => {
         e.preventDefault();
-        axios.post('/auth/signup', creds)
+        axios.post('https://angry-bugs.herokuapp.com/rest-auth/registration/', creds)
         .then(res => {
+            console.log(res.data);
             localStorage.setItem('token', res.data.token);
-            this.props.history.push('/');
+            window.location.href = '/login';
         })
         .catch(err => console.error(err));
     }
@@ -102,9 +103,18 @@ function Signup() {
                             <TextInput 
                                 id="password"
                                 type="password"
-                                name="password"
+                                name="password1"
                                 value={creds.password}
                                 placeholder="Enter your password."
+                                onChange={handleChange}
+                            />
+                            <InputLabel>Confirm Password</InputLabel>
+                            <TextInput 
+                                id="password"
+                                type="password"
+                                name="password2"
+                                value={creds.password}
+                                placeholder="Confirm your password."
                                 onChange={handleChange}
                             />
                             <SubmitButton type="submit">Click Here to Play</SubmitButton>

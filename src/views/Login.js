@@ -71,10 +71,11 @@ function Login() {
 
     const handleSubmit = e => {
         e.preventDefault();
-        axios.post('/auth/login', creds)
+        axios.post('https://angry-bugs.herokuapp.com/rest-auth/login/', creds)
         .then(res => {
+            console.log(res.data);
             localStorage.setItem('token', res.data.token);
-            this.props.history.push('/');
+            window.location.href = '/welcome';
         })
         .catch(err => console.error(err));
     }
