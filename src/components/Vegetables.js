@@ -15,7 +15,7 @@ const Image = styled.img`
   width: 40px;
 `;
 
-const Vegetables = ({ isActive, type, active, dead, image, id }) => {
+const Vegetables = ({ isActive, type, dead, id }) => {
   const [isDead, setIsDead] = useState(dead);
   const value = 45;
 

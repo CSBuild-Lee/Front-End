@@ -20,11 +20,10 @@ const parseStr = str => {
   const step2 = step1.split(">").join("");
   const step3 = step2.split("[").join("");
   const step4 = step3.split("]").join("");
-  // const step5 = JSON.parse(step4);
-  console.log(step4);
+  const final = JSON.stringify(step2);
+  const yoloz = JSON.parse(final);
+  console.log(typeof yoloz);
 };
-
-parseStr(yolo);
 
 const Main = () => {
   const [position, setPosition] = useState(1);
@@ -42,7 +41,7 @@ const Main = () => {
         setKilledBugs(res.data.killed);
         setCalories(res.data.value);
         setPosition(res.data.room_id);
-   
+        console.log(res.data)
       })
       .catch(err => console.error(err));
   };
@@ -56,9 +55,11 @@ const Main = () => {
       //   setPosition(position + 9);
       // } else setPosition(position - 1);
 
-      e.preventDefault();
+      // e.preventDefault();
+
+
       axios
-        .get("https://rickandmortyapi.com/api/character/?page=19")
+        .post("https://angry-bugs.herokuapp.com/move/", { direction: "Left" })
         .then(res => {
           console.log(res.data);
         })
@@ -66,10 +67,10 @@ const Main = () => {
     }
 
     if (e.keyCode == 39) {
-      // const arr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
-      // if (arr.includes(position)) {
-      //   setPosition(position - 9);
-      // } else setPosition(position + 1);
+      const arr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+      if (arr.includes(position)) {
+        setPosition(position - 9);
+      } else setPosition(position + 1);
 
       e.preventDefault();
       axios
@@ -81,9 +82,9 @@ const Main = () => {
     }
 
     if (e.keyCode == 38) {
-      // if (position <= 10) {
-      //   setPosition(position + 90);
-      // } else setPosition(position - 10);
+      if (position <= 10) {
+        setPosition(position + 90);
+      } else setPosition(position - 10);
 
       e.preventDefault();
       axios
@@ -95,9 +96,9 @@ const Main = () => {
     }
 
     if (e.keyCode == 40) {
-      // if (position >= 91) {
-      //   setPosition(position - 90);
-      // } else setPosition(position + 10);
+      if (position >= 91) {
+        setPosition(position - 90);
+      } else setPosition(position + 10);
 
       e.preventDefault();
       axios

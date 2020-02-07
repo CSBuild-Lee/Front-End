@@ -17,13 +17,13 @@ const data = [
         id: 1,
         type: "Tomato",
         value: 50,
-        isDead: false,
+        isDead: true,
     },
     {
         id: 2,
         type: "Tomato",
         value: 50,
-        isDead: false,
+        isDead: true,
     },
     { 
         id: 3,
