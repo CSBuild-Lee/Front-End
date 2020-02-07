@@ -13,7 +13,7 @@ const Info = styled.div`
   justify-content: space-between;
 `;
 
-const Menu = ({ moveLeft, moveRight, moveDown, moveUp }) => {
+const Menu = () => {
   return (
     <Container>
       <b>Rules</b>
@@ -31,10 +31,7 @@ const Menu = ({ moveLeft, moveRight, moveDown, moveUp }) => {
       <Info>
         <span>Navigation</span>
         <KeyBlock
-          moveLeft={moveLeft}
-          moveRight={moveRight}
-          moveDown={moveDown}
-          moveUp={moveUp}
+     
         />
       </Info>
     </Container>
