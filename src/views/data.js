@@ -17,7 +17,7 @@ const data = [
         id: 1,
         type: "Tomato",
         value: 50,
-        isDead: true
+        isDead: false,
     },
     {
         id: 2,

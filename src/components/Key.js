@@ -7,18 +7,12 @@ const Container = styled.button`
   width: 40px;
   margin: 4px;
   cursor: pointer;
-
-  :hover {
-    background-color: black;
-  }
 `;
 
-
-
-const Key = ({ children, fn }) => {
+const Key = ({ children }) => {
   return (
     <>
-      <Container onClick={fn}>{children}</Container>
+      <Container>{children}</Container>
     </>
   );
 };

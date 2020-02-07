@@ -22,15 +22,7 @@ const Container = styled.div`
   flex-wrap: wrap;
 `;
 
-
-
 const Garden = ({ position }) => {
-
-
-
-
-
-
   return (
     <Container>
       {data.map(item => (

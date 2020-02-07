@@ -13,18 +13,14 @@ const Row = styled.div`
   display: flex;
 `;
 
-const clickHandler = (children) => {
-  alert(`This is the ${children} key`)
-}
-
-const KeyBlock = ({ moveLeft, moveRight, moveDown, moveUp }) => {
+const KeyBlock = () => {
   return (
     <Container>
-      <Key fn={moveUp}>Up</Key>
+      <Key>Up</Key>
       <Row>
-        <Key fn={moveLeft}>Left</Key>
-        <Key fn={moveDown}>Down</Key>
-        <Key fn={moveRight}>Right</Key>
+        <Key>Left</Key>
+        <Key>Down</Key>
+        <Key>Right</Key>
       </Row>
     </Container>
   );
